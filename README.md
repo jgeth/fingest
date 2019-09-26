@@ -38,6 +38,12 @@ $ yarn start:dev
 $ yarn start:prod
 ```
 
+REST API endpoints:
+
+* http://localhost:3000/ <- greeting
+* http://localhost:3000/submission <- All submissions (limited to 20)
+* http://localhost:3000/submission/:adsh <- Submission by ID (adsh)
+
 ## Test
 
 ```bash
