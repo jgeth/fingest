@@ -16,6 +16,7 @@ export class SubmissionService {
    */
   async findAll(): Promise<Submission[]> {
     return await this.submissionRepository.find({
+      relations: ['data'],
       take: 20,
     });
   }
@@ -30,6 +31,8 @@ export class SubmissionService {
    * @param adsh the submission id
    */
   async findOne(adsh: string): Promise<Submission> {
-    return await this.submissionRepository.findOne(adsh);
+    return await this.submissionRepository.findOne(adsh, {
+      relations: ['data'],
+    });
   }
 }

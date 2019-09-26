@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryColumn, JoinColumn } from 'typeorm';
 import { Submission } from './submission';
 
 /**
@@ -8,7 +8,6 @@ import { Submission } from './submission';
 @Entity()
 export class Figure {
   @PrimaryColumn({ length: 20 })
-  @ManyToOne(type => Submission, submission => submission.data)
   adsh: string;
 
   @PrimaryColumn({ length: 256 })
@@ -35,4 +34,8 @@ export class Figure {
 
   @Column({ type: 'text' })
   footnote: string;
+
+  @ManyToOne(type => Submission, submission => submission.data)
+  @JoinColumn({ name: 'adsh' })
+  submission: Submission;
 }

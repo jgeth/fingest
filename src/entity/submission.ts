@@ -139,7 +139,7 @@ export class Submission {
   @Column({ length: 120, nullable: true })
   aciks: string;
 
-  @OneToMany(type => Figure, figure => figure.adsh)
+  @OneToMany(type => Figure, figure => figure.submission)
   data: Figure[];
 }
 
