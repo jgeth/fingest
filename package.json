@@ -39,7 +39,7 @@
     "rxjs": "^6.5.3",
     "sqlite": "^3.0.3",
     "typeorm": "^0.2.19",
-    "unzip": "^0.1.11"
+    "unzipper": "^0.10.5"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.8.1",
@@ -51,7 +51,7 @@
     "@types/node": "^12.7.5",
     "@types/rimraf": "^2.0.2",
     "@types/supertest": "^2.0.8",
-    "@types/unzip": "^0.1.1",
+    "@types/unzipper": "^0.10.0",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "supertest": "^4.0.2",

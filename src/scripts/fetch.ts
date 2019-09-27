@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs';
 import * as rimraf from 'rimraf';
-import * as unzip from 'unzip';
+import * as unzip from 'unzipper';
 
 const DOWNLOAD_TIMEOUT_MILLIS = 600000; // 10 minutes
 
