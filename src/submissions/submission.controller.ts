@@ -1,4 +1,4 @@
-import { Body, Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Param } from '@nestjs/common';
 import { SubmissionService } from './submission.service';
 import { Submission } from '../entity/submission';
 
@@ -23,7 +23,7 @@ export class SubmissionController {
    * unique identifier.
    */
   @Get(':adsh')
-  findOne(adsh): Promise<Submission> {
-    return this.submissionService.findOne(adsh);
+  findOne(@Param() params): Promise<Submission> {
+    return this.submissionService.findOne(params.adsh);
   }
 }

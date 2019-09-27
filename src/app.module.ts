@@ -14,7 +14,7 @@ import { Submission } from './entity/submission';
       type: 'sqlite',
       database: 'fingest.db',
       entities: [Figure, Submission],
-      // logging: ['query', 'error'],
+      logging: ['query', 'error'],
       // synchronize: true,
     }),
   ],
