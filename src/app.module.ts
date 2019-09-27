@@ -15,7 +15,7 @@ import { Submission } from './entity/submission';
       database: 'fingest.db',
       entities: [Figure, Submission],
       // logging: ['query', 'error'],
-      synchronize: true,
+      // synchronize: true,
     }),
   ],
   controllers: [AppController],

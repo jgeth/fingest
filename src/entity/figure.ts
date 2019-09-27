@@ -1,4 +1,11 @@
-import { Column, Entity, ManyToOne, PrimaryColumn, JoinColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryColumn,
+  JoinColumn,
+} from 'typeorm';
 import { Submission } from './submission';
 
 /**
@@ -34,6 +41,12 @@ export class Figure {
 
   @Column({ type: 'text' })
   footnote: string;
+
+  @CreateDateColumn()
+  recordedAt: string;
+
+  @Column()
+  source: string;
 
   @ManyToOne(type => Submission, submission => submission.data)
   @JoinColumn({ name: 'adsh' })

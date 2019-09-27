@@ -1,0 +1,9 @@
+[
+  {
+    "name": "default",
+    "type": "sqlite",
+    "database": "fingest.db",
+    "entities": ["src/entity/*.ts"],
+    "synchronize": true
+  }
+]

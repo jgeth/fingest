@@ -4,11 +4,16 @@
   "description": "SEC Financial Statement ingester and reporter",
   "author": "jgeth <https://github.com/jgeth>",
   "license": "MIT",
+  "engines": {
+    "node": ">=10.16.3"
+  },
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "fetch": "ts-node src/scripts/fetch.ts",
     "format": "prettier --write \"src/**/*.ts\"",
-    "ingest": "ts-node src/scripts/ingest-sqlite.ts",
+    "ingest-sub": "ts-node src/scripts/ingest-sub.ts",
+    "ingest-num": "ts-node src/scripts/ingest-num.ts",
+    "ingest": "yarn ingest-sub; yarn ingest-num",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
     "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
@@ -28,6 +33,7 @@
     "axios": "^0.19.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.1",
+    "event-stream": "^4.0.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
@@ -39,6 +45,7 @@
     "@nestjs/cli": "^6.8.1",
     "@nestjs/schematics": "^6.6.6",
     "@nestjs/testing": "^6.7.1",
+    "@types/event-stream": "^3.3.34",
     "@types/express": "^4.17.1",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.5",

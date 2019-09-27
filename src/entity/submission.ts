@@ -1,6 +1,6 @@
 import {
   Column,
-  // CreateDateColumn,
+  CreateDateColumn,
   Entity,
   OneToMany,
   PrimaryColumn,
@@ -15,9 +15,6 @@ export class Submission {
   @PrimaryColumn({ length: 20 })
   // TODO: Typify adsh with a Regex Validation pattern (nnnnnnnnnn-nn-nnnnnn)
   adsh: string;
-
-  // @CreateDateColumn()
-  // createdAt: string;
 
   @Column({ type: 'numeric' })
   cik: number;
@@ -89,10 +86,11 @@ export class Submission {
 
   @Column({ length: 8, nullable: true })
   // TODO: use a date type (yyyymmdd)
-  readonly changed: string;
+  changed: string;
 
   @Column({ length: 5, nullable: true })
-  afs: FilerStatus;
+  // TODO: use enum FilerStatus (unecessarily complicates insert for POC)
+  afs: string; // FilerStatus;
 
   @Column({ type: 'boolean' })
   wksi: boolean;
@@ -138,6 +136,12 @@ export class Submission {
 
   @Column({ length: 120, nullable: true })
   aciks: string;
+
+  @CreateDateColumn()
+  recordedAt: string;
+
+  @Column()
+  source: string;
 
   @OneToMany(type => Figure, figure => figure.submission)
   data: Figure[];
